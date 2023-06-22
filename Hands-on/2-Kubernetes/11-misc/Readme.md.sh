@@ -106,6 +106,7 @@ kubectl get service -o wide
 #------------Auto scale
 # To auto scale based on the workload of CPU
 kubectl auto scale deployment hello-world-rest-api --max=10 --cpu-percent=70
+kubectl get hpa
 
 kubectl set image deployment hello-world-rest-api hello-world-rest-api=atingupta2005/hello-world-rest-api:0.0.2.RELEASE
 
