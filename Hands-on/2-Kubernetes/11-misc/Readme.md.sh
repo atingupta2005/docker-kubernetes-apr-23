@@ -1,7 +1,3 @@
-# Setup autocomplete in bash into the current shell
-source <(kubectl completion bash) 
-echo "source <(kubectl completion bash)" >> ~/.bashrc
-
 #1.-------Deploy Docker image in Kubernetes
 sudo kubectl create deployment hello-world-rest-api --image=atingupta2005/hello-world-rest-api:0.0.1.RELEASE
 sudo kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080
