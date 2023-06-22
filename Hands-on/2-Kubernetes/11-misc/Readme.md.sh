@@ -1,33 +1,33 @@
 #1.-------Deploy Docker image in Kubernetes
-sudo kubectl create deployment hello-world-rest-api --image=atingupta2005/hello-world-rest-api:0.0.1.RELEASE
-sudo kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080
-sudo kubectl get service
-sudo kubectl get pods
-sudo kubectl scale deployment hello-world-rest-api --replicas=3
-sudo kubectl get pods
+kubectl create deployment hello-world-rest-api --image=atingupta2005/hello-world-rest-api:0.0.1.RELEASE
+kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080
+kubectl get service
+kubectl get pods
+kubectl scale deployment hello-world-rest-api --replicas=3
+kubectl get pods
 
 #2.--------Pods
 #Pod is the smallest deployable unit. Can not have container without Pod. Container lives inside Pod
-sudo kubectl get pods
-sudo kubectl get pods -o wide
+kubectl get pods
+kubectl get pods -o wide
 
 # To get details about the artifact
-sudo kubectl explain pods
+kubectl explain pods
 
 # Get more details of the pod
-sudo kubectl describe pod hello-world-rest-api-58ff5dd898-9trh2	
+kubectl describe pod hello-world-rest-api-58ff5dd898-9trh2	
 
-sudo kubectl get pods
-sudo kubectl delete pod hello-world-rest-api-58ff5dd898-62l9d
-sudo kubectl get pods
+kubectl get pods
+kubectl delete pod hello-world-rest-api-58ff5dd898-62l9d
+kubectl get pods
 
 #--------Get list of various artifacts
-sudo kubectl get all
-sudo kubectl get events
-sudo kubectl get pods
-sudo kubectl get replicaset
-sudo kubectl get deployment
-sudo kubectl get service
+kubectl get all
+kubectl get events
+kubectl get pods
+kubectl get replicaset
+kubectl get deployment
+kubectl get service
 
 #3.------Replicaset
 kubectl get replicasets
