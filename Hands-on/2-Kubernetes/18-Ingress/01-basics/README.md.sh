@@ -3,10 +3,8 @@
 ## Introduction
 
 # Get the resource group name of the AKS cluster
-AKS_NAME="akstrng"
-AKS_RG="rgtrngaks"
-
-az aks get-credentials --name $AKS_NAME --resource-group $AKS_RG --admin
+AKS_NAME="aks2"
+AKS_RG="rgaks2"
 
 CLSTR_RG_NAME=$(az aks show --resource-group $AKS_RG --name $AKS_NAME --query nodeResourceGroup -o json)
 CLSTR_RG_NAME2=${CLSTR_RG_NAME//\"}
@@ -22,10 +20,6 @@ echo $INGRESS_PUB_IP2
 # Make a note of Public IP created for Ingress
 #23.96.84.208
 
-# Install Helm3 (if not installed)
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-chmod 700 get_helm.sh
-./get_helm.sh
 
 # Create a namespace for your ingress resources
 #kubectl delete namespace ingress-basic
