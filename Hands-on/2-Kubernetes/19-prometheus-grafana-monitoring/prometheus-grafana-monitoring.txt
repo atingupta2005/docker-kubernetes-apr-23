@@ -1,0 +1,24 @@
+## Refer: 
+ -  https://k21academy.com/docker-kubernetes/prometheus-grafana-monitoring/
+
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+helm repo add stable https://charts.helm.sh/stable
+
+helm repo update
+
+helm install prometheus prometheus-community/kube-prometheus-stack
+
+kubectl edit svc prometheus-grafana
+# Change ClusterIp to LoadBalancer at line number 44
+
+kubectl get svc prometheus-grafana
+
+curl <ip-address>
+
+username: admin
+password: prom-operator
+
+helm uninstall prometheus
+
+kubectl delete svc prometheus-grafana
